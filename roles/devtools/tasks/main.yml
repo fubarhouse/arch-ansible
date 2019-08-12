@@ -1,0 +1,48 @@
+- name: Install Docker
+  pacman:
+    name: docker
+    state: present
+
+- name: Create 'docker' group if not already present
+  group:
+    name: docker
+    # docker group is root-equivalent
+    # Docker complains when it is not a system group
+    system: yes
+
+- name: Add '{{ user.name }}' to the 'docker' group
+  user:
+    name: '{{ user.name }}'
+    groups:
+      - docker
+    append: yes
+
+- name: Enable and start Docker service
+  systemd:
+    name: docker.service
+    enabled: True
+    state: started
+
+
+- name: Install lazydocker
+  aur:
+    name: lazydocker
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - lazydocker
+    - aur
+
+- name: Install asdf-vm
+  aur:
+    name: asdf-vm
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - asdf-vm
+    - aur
+
+- name: Install dev languages
+  pacman:
+    name: "{{ dev_languages }}"
+    state: present

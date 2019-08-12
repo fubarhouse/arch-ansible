@@ -1,0 +1,31 @@
+---
+- name: Install Transmission
+  pacman: name=transmission-gtk state=present
+
+- name: Install Dropbox
+  aur:
+    name: dropbox
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - dropbox
+    - aur
+
+- name: Install 1Password-cli
+  aur:
+    name: 1password-cli
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - 1password-cli
+    - aur
+
+- name: Install security tools
+  pacman:
+    name: "{{ security_tools }}"
+    state: present
+
+- name: Install Calibre
+  pacman:
+    name: calibre
+    state: present

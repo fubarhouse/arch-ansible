@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    # - { role: base, tags: ['base'] }
+    # - { role: editors, tags: ['editors'] }
+    # - { role: gnupg, tags: ['gnupg'] }
+    # - { role: cron, tags: ['cron'] }
+    # - { role: nettools, tags: ['nettools'] }
+    # - { role: ssd, tags: ['ssd'] }
+    # - { role: ntp, tags: ['ntp'] }
+    # - { role: multimedia, tags: ['multimedia'] }
+    # - { role: browsers, tags: ['browsers'] }
+    # - { role: infratools, tags: ['infratools'] }
+    # - { role: office, tags: ['office'] }
+    # - { role: devtools, tags: ['devtools'] }
+    # - { role: infratools, tags: ['infratools'] }
+    - { role: misctools, tags: ['misctools'] }
+
+
+    # - { role: networkmanager, tags: ['networkmanager'] }
+    # - { role: pdf, tags: ['pdf'] }  
+
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"

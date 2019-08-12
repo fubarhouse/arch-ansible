@@ -1,0 +1,80 @@
+user:
+    name: shiva
+    uid: 1000
+    group: shiva
+    shell: /usr/bin/zsh
+    email:  shiva.narayanaswamy@gmail.com
+    log:
+        dir: log
+        rotate: 8
+
+hostname: Arrakis
+
+base_packages:
+    - base-devel
+    - pacman-contrib
+    - fwupd
+    - dmidecode
+    - tmux
+    - git
+    - rsync
+    - glances
+    - coreutils
+    - moreutils
+    - dateutils
+    - bc
+    - strace
+    - lsof
+    - sysstat
+    - jq
+    - screen
+    - termdown
+
+gnupg:
+    enable_agent: True
+    emulate_ssh: True
+    
+dev_languages:
+    - ruby
+    - rubygems
+    - go
+    - go-tools
+    - nodejs
+    - npm
+    - elixir
+
+infra_tools:
+    - terraform
+    - aws-cli
+    - docker-compose
+
+security_tools:
+    - keybase
+    - kbfs
+    - keybase-gui
+
+passwordless_sudo:
+    - /usr/bin/openvpn*
+    
+editors:
+    - code
+    - vim
+
+multimedia:
+    - gpicview
+    - deadbeef
+    - mpv
+    - vlc
+
+firejail:
+    blacklist:
+        - ~/.calendars
+        - ~/.config/vdirsyncer
+        - ~/.contacts
+        - ~/.keys
+        - ~/.mbsyncrc
+        - ~/.offlineimap
+        - ~/.offlineimaprc
+        - ~/.password-store
+        - ~/.vdirsyncer
+        - ~/library

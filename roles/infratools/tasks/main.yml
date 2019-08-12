@@ -1,0 +1,14 @@
+---
+- name: Install infra tools
+  pacman:
+    name: "{{ infra_tools }}"
+    state: present
+
+- name: Install aws-vault
+  aur:
+    name: aws-vault
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - aws-vault
+    - aur

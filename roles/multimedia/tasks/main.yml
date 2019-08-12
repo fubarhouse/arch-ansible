@@ -1,0 +1,20 @@
+---
+- include: imagemagick.yml
+- include: inkscape.yml
+- include: gimp.yml
+- name: Install multimedia tools
+  pacman:
+    name: "{{ multimedia }}"
+    state: present
+
+- name: Install misc media codecs and helpers
+  pacman:
+    name:
+      - flac
+      - lame
+      - gst-libav
+      - gst-plugins-good
+      - exiv2
+      - perl-image-exiftool
+      - opus-tools
+    state: present
