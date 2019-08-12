@@ -15,7 +15,7 @@
 
 - name: Jail GIMP
   file: src=/usr/bin/firejail
-        dest=/usr/local/bin/gimp
+        dest=/usr/sbin/gimp
         state=link
   tags:
     - gimp
