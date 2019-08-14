@@ -29,3 +29,39 @@
   pacman:
     name: calibre
     state: present
+
+- name: Install conky-lua
+  aur:
+    name: conky-lua
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - conky-lua
+    - aur
+
+- name: Install nasc calculator
+  aur:
+    name: nasc
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - nasc
+    - aur
+
+- name: Install Skype
+  aur:
+    name: skypeforlinux-stable-bin
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - skype
+    - aur
+
+- name: Install Franz
+  aur:
+    name: franz
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - franz
+    - aur

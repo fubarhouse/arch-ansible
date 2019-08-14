@@ -18,3 +18,12 @@
       - perl-image-exiftool
       - opus-tools
     state: present
+
+- name: Install Spotify
+  aur:
+    name: spotify
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - spotify
+    - aur

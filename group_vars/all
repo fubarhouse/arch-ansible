@@ -29,6 +29,7 @@ base_packages:
     - jq
     - screen
     - termdown
+    - xscreensaver
 
 gnupg:
     enable_agent: True
@@ -52,6 +53,7 @@ security_tools:
     - keybase
     - kbfs
     - keybase-gui
+    - seahorse
 
 passwordless_sudo:
     - /usr/bin/openvpn*
@@ -78,3 +80,5 @@ firejail:
         - ~/.password-store
         - ~/.vdirsyncer
         - ~/library
+
+fingerprint: False
