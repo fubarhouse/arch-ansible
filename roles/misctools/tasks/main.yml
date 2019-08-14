@@ -39,6 +39,15 @@
     - conky-lua
     - aur
 
+- name: Install caffeine-ng
+  aur:
+    name: caffeine-ng
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - caffeine-ng
+    - aur
+
 - name: Install nasc calculator
   aur:
     name: nasc
