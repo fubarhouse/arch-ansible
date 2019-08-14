@@ -25,3 +25,6 @@
     user: "{{ user.name }}"
   tags:
     - aur
+
+- name: Install network-manager-applet
+  pacman: name=network-manager-apple state=present
