@@ -42,6 +42,11 @@
     - asdf-vm
     - aur
 
+- name: Install tldr
+  pacman:
+    name: tldr
+    state: present
+
 - name: Install dev languages
   pacman:
     name: "{{ dev_languages }}"

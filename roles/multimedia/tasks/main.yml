@@ -17,6 +17,7 @@
       - exiv2
       - perl-image-exiftool
       - opus-tools
+      - gnuplot
     state: present
 
 - name: Install Spotify

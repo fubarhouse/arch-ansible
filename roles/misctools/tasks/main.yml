@@ -2,6 +2,9 @@
 - name: Install Transmission
   pacman: name=transmission-gtk state=present
 
+- name: Install xpdf
+  pacman: name=xpdf state=present
+
 - name: Install Dropbox
   aur:
     name: dropbox
@@ -37,6 +40,15 @@
     skip_pgp: yes
   tags:
     - conky-lua
+    - aur
+
+- name: Install gotop
+  aur:
+    name: gotop
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - gotop
     - aur
 
 - name: Install caffeine-ng
