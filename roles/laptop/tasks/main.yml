@@ -27,4 +27,7 @@
     - aur
 
 - name: Install network-manager-applet
-  pacman: name=network-manager-apple state=present
+  pacman: name=network-manager-applet state=present
+
+- name: Install redshift
+  pacman: name=redshift state=present
