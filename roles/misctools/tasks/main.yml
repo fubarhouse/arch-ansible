@@ -5,8 +5,29 @@
 - name: Install xpdf
   pacman: name=xpdf state=present
 
+- name: Install Hugo
+  pacman: name=hugo state=present
+
 - name: Install VirtualBox
   pacman: name=virtualbox state=present
+
+- name: Install linux52-virtualbox-host-modules 
+  pacman: name=linux52-virtualbox-host-modules state=present
+
+- name: adding existing user '{{ user.name }}' to group vboxusers
+  user:
+    name: '{{ user.name }}'
+    groups: vboxusers
+    append: yes
+
+- name: Install VirtualBox Extensions
+  aur:
+    name: virtualbox-ext-oracle
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - virtualbox-ext-oracle
+    - aur
 
 - name: Install Dropbox
   aur:
