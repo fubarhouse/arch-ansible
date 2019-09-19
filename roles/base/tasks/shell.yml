@@ -24,3 +24,20 @@
     state: present
   tags:
     - terminal
+
+- name: Install powerline-fonts
+  pacman:
+    name:
+      - powerline-fonts
+    state: present
+  tags:
+    - fonts
+
+- name: Install starship terminal prompt
+  pacman:
+    name:
+      - starship
+    state: present
+  tags:
+    - terminal
+    - prompt
