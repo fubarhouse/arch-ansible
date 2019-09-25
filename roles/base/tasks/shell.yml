@@ -25,6 +25,15 @@
   tags:
     - terminal
 
+- name: Install screenfetch
+  pacman:
+    name:
+      - screenfetch
+    state: present
+  tags:
+    - terminal
+    - screenfetch
+
 - name: Install powerline-fonts
   pacman:
     name:
@@ -33,11 +42,3 @@
   tags:
     - fonts
 
-- name: Install starship terminal prompt
-  pacman:
-    name:
-      - starship
-    state: present
-  tags:
-    - terminal
-    - prompt
