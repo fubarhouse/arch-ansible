@@ -47,6 +47,15 @@
     name: tldr
     state: present
 
+- name: Install DBeaver
+  aur:
+    name: dbeaver
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - dbeaver
+    - aur
+
 - name: Install dev languages
   pacman:
     name: "{{ dev_languages }}"
